@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>skin Detection Levels</title>
+   <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> 
+    <style>
+        body{
+            background-color: #7bb4f0;
+        }
+        .classification-card {
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px solid #4e4d4d;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+        }
+        .classification-image {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .classification-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .classification-header h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .btn-primary {
+            background-color: #2e86de;
+            border: none;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+            font-size: 1rem;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: #1b4f72;
+        }
+        .right{
+            margin-left: 1000px;
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="text-center mt-5">skin disease Levels</h1>
+
+     {% if prediction_text == 'Acne' %}
+        <div class="classification-card">
+            <div class="classification-header">
+                <h2>Acne</h2>
+            </div>
+            <div class="right">
+                <a href="{% url 'model' %}" class="btn-primary">Model</a>
+            </div>
+            <div class="classification-image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlZFPJkA3ZjPiFQR3NOrTHcN9ovQfyvTY1PbQ26vK6wnSNfc2vV4v0yS-P5pWmX9QkYK8&usqp=CAU" class="img-fluid" alt="Acne Image">
+            </div>
+            <div class="classification-content">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Description</th>
+                        <td>Acne is a common skin condition that occurs when hair follicles become clogged with oil and dead skin cells, leading to pimples, blackheads, and cysts. It can affect people of all ages but is most common among teenagers.</td>
+                    </tr>
+                    <tr>
+                        <th>Symptoms</th>
+                        <td>
+                            <ul>
+                                <li>Whiteheads (closed plugged pores)</li>
+                                <li>Blackheads (open plugged pores)</li>
+                                <li>Papules (small red, tender bumps)</li>
+                                <li>Pustules (pimples with pus)</li>
+                                <li>Nodules or cystic lesions (painful lumps beneath the skin)</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Causes</th>
+                        <td>
+                            <ul>
+                                <li>Excess oil (sebum) production</li>
+                                <li>Clogged hair follicles by oil and dead skin cells</li>
+                                <li>Bacteria (Propionibacterium acnes)</li>
+                                <li>Hormonal changes (especially during puberty)</li>
+                                <li>Stress and certain medications</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Prevention</th>
+                        <td>
+                            <ul>
+                                <li>Cleanse skin gently twice daily</li>
+                                <li>Avoid harsh scrubbing or abrasive products</li>
+                                <li>Use non-comedogenic (non-pore clogging) skincare and cosmetics</li>
+                                <li>Maintain a balanced, low-glycemic diet</li>
+                                <li>Manage stress levels</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Treatment</th>
+                        <td>
+                            <ul>
+                                <li>Topical treatments (benzoyl peroxide, salicylic acid)</li>
+                                <li>Retinoids (topical or oral)</li>
+                                <li>Antibiotics (topical or oral)</li>
+                                <li>Hormonal treatments (birth control pills, anti-androgens)</li>
+                                <li>In severe cases, isotretinoin (Accutane)</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Dietary Recommendations</th>
+                        <td>
+                            <ul>
+                                <li>Eat antioxidant-rich foods (berries, leafy greens)</li>
+                                <li>Include omega-3 rich foods (salmon, walnuts)</li>
+                                <li>Reduce intake of high-glycemic foods (white bread, sugary snacks)</li>
+                                <li>Stay hydrated with plenty of water</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Yoga and Physical Activity</th>
+                        <td>Practice stress-reducing yoga like Hatha and Pranayama breathing exercises. Regular moderate exercise helps balance hormones and improve skin health.</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+       
+        
+
+    {% elif prediction_text == 'Eczema' %}
+        <div class="classification-card">
+            <div class="classification-header">
+                <h2>Eczema</h2>
+            </div>
+            <div class="right">
+                <a href="{% url 'model' %}" class="btn-primary">Model</a>
+            </div>
+            <div class="classification-image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB7ijMdS_Ju7K23ZdDke67KHyyUCA1lB1FbochPihZq9ux1DPZWS9Vyuk3FzNwO8H2ld8&usqp=CAU" class="img-fluid" alt="Eczema Image">
+            </div>
+            <div class="classification-content">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Description</th>
+                        <td>Eczema, also known as atopic dermatitis, is a chronic skin condition that causes inflammation, redness, and itchy rashes. It often appears on the face, hands, feet, or behind the knees and elbows.</td>
+                    </tr>
+                    <tr>
+                        <th>Symptoms</th>
+                        <td>
+                            <ul>
+                                <li>Dry, sensitive skin</li>
+                                <li>Red or brownish-gray patches</li>
+                                <li>Severe itching, especially at night</li>
+                                <li>Thickened, cracked, or scaly skin</li>
+                                <li>Small, raised bumps that may leak fluid</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Causes</th>
+                        <td>
+                            <ul>
+                                <li>Genetic predisposition</li>
+                                <li>Immune system overreaction</li>
+                                <li>Environmental triggers (pollen, dust, soaps)</li>
+                                <li>Stress</li>
+                                <li>Changes in weather or humidity</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Prevention</th>
+                        <td>
+                            <ul>
+                                <li>Keep skin moisturized</li>
+                                <li>Avoid known allergens and irritants</li>
+                                <li>Use mild, fragrance-free soaps and lotions</li>
+                                <li>Wear soft, breathable fabrics</li>
+                                <li>Manage stress through relaxation techniques</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Treatment</th>
+                        <td>
+                            <ul>
+                                <li>Topical corticosteroid creams</li>
+                                <li>Antihistamines for itch relief</li>
+                                <li>Prescription moisturizers</li>
+                                <li>Phototherapy (light therapy)</li>
+                                <li>Immunosuppressive medications (for severe cases)</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Dietary Recommendations</th>
+                        <td>
+                            <ul>
+                                <li>Anti-inflammatory foods: Fatty fish, turmeric, ginger</li>
+                                <li>Fruits: Apples, blueberries, oranges</li>
+                                <li>Vegetables: Spinach, broccoli, kale</li>
+                                <li>Probiotics: Yogurt, kefir, fermented foods</li>
+                                <li>Avoid processed foods and artificial additives</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Yoga and Physical Activity</th>
+                        <td>Gentle yoga, breathing exercises, and stress-reducing activities like walking or swimming can help manage flare-ups and improve skin health.</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+     {% elif prediction_text == 'Melanoma' %}
+        <div class="classification-card">
+            <div class="classification-header">
+                <h2>Melanoma</h2>
+            </div>
+            <div class="right">
+                <a href="{% url 'model' %}" class="btn-primary">Model</a>
+            </div>
+            <div class="classification-image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKXHo7Ux-pT6kmPTVdGbm8VbMvmkJQfMJH3A&usqp=CAU" class="img-fluid" alt="High Risk Image">
+            </div>
+            <div class="classification-content">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Description</th>
+                        <td>Melanoma is a serious form of skin cancer that develops in the melanocytes, the cells responsible for skin pigmentation. It is considered the most dangerous type of skin cancer due to its ability to spread to other organs if not detected early.</td>
+                    </tr>
+                    <tr>
+                        <th>Symptoms</th>
+                        <td>
+                            <ul>
+                                <li>A new, unusual growth or a change in an existing mole</li>
+                                <li>Asymmetrical mole shape</li>
+                                <li>Irregular, blurred, or jagged mole borders</li>
+                                <li>Multiple colors within a single mole</li>
+                                <li>Moles larger than 6mm in diameter</li>
+                                <li>Itching, bleeding, or crusting of a mole</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Causes</th>
+                        <td>
+                            <ul>
+                                <li>Excessive exposure to ultraviolet (UV) radiation from the sun or tanning beds</li>
+                                <li>Fair skin, freckles, or light hair color</li>
+                                <li>Family history of melanoma</li>
+                                <li>Weakened immune system</li>
+                                <li>Presence of many or atypical moles</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Prevention</th>
+                        <td>
+                            <ul>
+                                <li>Limit sun exposure during peak hours (10 a.m. to 4 p.m.)</li>
+                                <li>Use broad-spectrum sunscreen with SPF 30 or higher</li>
+                                <li>Wear protective clothing, hats, and sunglasses</li>
+                                <li>Avoid tanning beds</li>
+                                <li>Regularly check skin for new or changing moles</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Treatment</th>
+                        <td>
+                            <ul>
+                                <li>Surgical removal of the melanoma</li>
+                                <li>Immunotherapy to boost the body’s immune response</li>
+                                <li>Targeted therapy for advanced cases</li>
+                                <li>Chemotherapy in certain cases</li>
+                                <li>Radiation therapy for metastasized melanoma</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Dietary Recommendations</th>
+                        <td>
+                            <ul>
+                                <li>Fruits rich in antioxidants: Blueberries, oranges, kiwi</li>
+                                <li>Vegetables: Spinach, kale, broccoli</li>
+                                <li>Foods high in omega-3 fatty acids: Flaxseed, walnuts, salmon</li>
+                                <li>Green tea for its polyphenol content</li>
+                                <li>Limit processed and red meats</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Yoga and Physical Activity</th>
+                        <td>Engage in gentle yoga, stretching, and mindfulness exercises to reduce stress. Moderate activities like walking, swimming, or cycling are recommended to maintain overall health and immune function.</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+      {% elif prediction_text == 'Psoriasis' %}
+          <div class="classification-card">
+              <div class="classification-header">
+                  <h2>Psoriasis</h2>
+              </div>
+              <div class="right">
+                  <a href="{% url 'model' %}" class="btn-primary">Model</a>
+              </div>
+              <div class="classification-image">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxPK7G1f48bR-4LRi0nF3x3HjrHk_FJZPltAAJvpHcFA&s" class="img-fluid" alt="Psoriasis Image">
+              </div>
+              <div class="classification-content">
+                  <table class="table table-bordered">
+                      <tr>
+                          <th>Description</th>
+                          <td>Psoriasis is a chronic autoimmune skin condition that speeds up the life cycle of skin cells, causing cells to build up rapidly on the surface of the skin, forming scales and red patches that can be itchy and sometimes painful.</td>
+                      </tr>
+                      <tr>
+                          <th>Symptoms</th>
+                          <td>
+                              <ul>
+                                  <li>Red patches of skin covered with thick, silvery scales</li>
+                                  <li>Dry, cracked skin that may bleed</li>
+                                  <li>Itching, burning, or soreness</li>
+                                  <li>Thickened, pitted, or ridged nails</li>
+                                  <li>Stiff and swollen joints (in psoriatic arthritis)</li>
+                              </ul>
+                          </td>
+                      </tr>
+                      <tr>
+                          <th>Causes</th>
+                          <td>
+                              <ul>
+                                  <li>Genetic predisposition</li>
+                                  <li>Immune system dysfunction</li>
+                                  <li>Environmental triggers like stress, skin injury, or infections</li>
+                                  <li>Certain medications (lithium, antimalarials)</li>
+                                  <li>Cold, dry weather</li>
+                              </ul>
+                          </td>
+                      </tr>
+                      <tr>
+                          <th>Prevention</th>
+                          <td>
+                              <ul>
+                                  <li>Maintain moisturized skin to prevent dryness</li>
+                                  <li>Avoid known personal triggers like stress and skin injuries</li>
+                                  <li>Protect skin from cuts, scrapes, and sunburn</li>
+                                  <li>Manage stress effectively</li>
+                                  <li>Adopt a healthy, anti-inflammatory diet</li>
+                              </ul>
+                          </td>
+                      </tr>
+                      <tr>
+                          <th>Treatment</th>
+                          <td>
+                              <ul>
+                                  <li>Topical corticosteroids</li>
+                                  <li>Vitamin D analogues</li>
+                                  <li>Phototherapy (UV light)</li>
+                                  <li>Systemic medications (Methotrexate, Cyclosporine)</li>
+                                  <li>Biologics targeting immune response</li>
+                              </ul>
+                          </td>
+                      </tr>
+                      <tr>
+                          <th>Dietary Recommendations</th>
+                          <td>
+                              <ul>
+                                  <li>Fruits: Berries, oranges, and apples</li>
+                                  <li>Vegetables: Spinach, kale, carrots, and broccoli</li>
+                                  <li>Omega-3 rich foods: Salmon, flaxseeds, and walnuts</li>
+                                  <li>Whole grains and nuts</li>
+                                  <li>Avoid processed and inflammatory foods</li>
+                              </ul>
+                          </td>
+                      </tr>
+                      <tr>
+                          <th>Yoga and Physical Activity</th>
+                          <td>Incorporate yoga for stress management and flexibility. Low-impact activities like swimming and walking can improve overall health and reduce flare-ups.</td>
+                      </tr>
+                  </table>
+              </div>
+          </div>
+       {% elif prediction_text == 'Rosacea' %}
+          <div class="classification-card">
+              <div class="classification-header">
+                  <h2>Rosacea</h2>
+              </div>
+              <div class="right">
+                  <a href="{% url 'model' %}" class="btn-primary">Model</a>
+              </div>
+              <div class="classification-image">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlWx0HzX8KbkVGV99PeXoz9OEDt8UuN8hGvA&usqp=CAU" class="img-fluid" alt="Rosacea Image">
+              </div>
+              <div class="classification-content">
+                  <table class="table table-bordered">
+                      <tr>
+                          <th>Description</th>
+                          <td>Rosacea is a chronic inflammatory skin condition that primarily affects the face, causing redness, visible blood vessels, and sometimes acne-like bumps. It can worsen over time if untreated.</td>
+                      </tr>
+                      <tr>
+                          <th>Symptoms</th>
+                          <td>
+                              <ul>
+                                  <li>Facial redness</li>
+                                  <li>Swollen red bumps</li>
+                                  <li>Visible blood vessels</li>
+                                  <li>Eye irritation (ocular rosacea)</li>
+                                  <li>Burning or stinging sensations</li>
+                                  <li>Thickening of the skin in severe cases</li>
+                              </ul>
+                          </td>
+                      </tr>
+                      <tr>
+                          <th>Causes</th>
+                          <td>
+                              <ul>
+                                  <li>Genetic predisposition</li>
+                                  <li>Immune system overreaction</li>
+                                  <li>Environmental factors (sunlight, wind)</li>
+                                  <li>Spicy foods, alcohol, and hot beverages</li>
+                                  <li>Microorganisms like Demodex mites</li>
+                                  <li>Emotional stress</li>
+                              </ul>
+                          </td>
+                      </tr>
+                      <tr>
+                          <th>Prevention</th>
+                          <td>
+                              <ul>
+                                  <li>Protect skin from sun exposure</li>
+                                  <li>Avoid known food and drink triggers</li>
+                                  <li>Use gentle, non-irritating skincare products</li>
+                                  <li>Manage stress through relaxation techniques</li>
+                                  <li>Keep a diary to track flare-up patterns</li>
+                              </ul>
+                          </td>
+                      </tr>
+                      <tr>
+                          <th>Treatment</th>
+                          <td>
+                              <ul>
+                                  <li>Topical medications (metronidazole, azelaic acid)</li>
+                                  <li>Oral antibiotics for moderate to severe cases</li>
+                                  <li>Laser therapy for visible blood vessels</li>
+                                  <li>Proper skincare routines</li>
+                                  <li>Ocular rosacea treatments (artificial tears, antibiotics)</li>
+                              </ul>
+                          </td>
+                      </tr>
+                      <tr>
+                          <th>Dietary Recommendations</th>
+                          <td>
+                              <ul>
+                                  <li>Anti-inflammatory foods: leafy greens, berries, turmeric</li>
+                                  <li>Foods rich in omega-3 fatty acids: salmon, flaxseeds</li>
+                                  <li>Probiotic-rich foods: yogurt, kimchi, sauerkraut</li>
+                                  <li>Avoid alcohol, spicy foods, and hot drinks</li>
+                              </ul>
+                          </td>
+                      </tr>
+                      <tr>
+                          <th>Yoga and Physical Activity</th>
+                          <td>Opt for gentle yoga practices and mindfulness exercises to manage stress. Avoid intense physical activities that cause excessive facial flushing. Prefer walking, light stretching, and breathing exercises.</td>
+                      </tr>
+                  </table>
+              </div>
+          </div>
+          {% elif prediction_text == 'Vitiligo' %}
+          <div class="classification-card">
+              <div class="classification-header">
+                  <h2>Vitiligo</h2>
+              </div>
+              <div class="right">
+                  <a href="{% url 'model' %}" class="btn-primary">Model</a>
+              </div>
+              <div class="classification-image">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwX4gBp9FaUG2RrIVvxdEmjJvLBwQe9UhR2A&usqp=CAU" class="img-fluid" alt="Vitiligo Image">
+              </div>
+              <div class="classification-content">
+                  <table class="table table-bordered">
+                      <tr>
+                          <th>Description</th>
+                          <td>Vitiligo is a chronic skin condition characterized by patches of skin losing their pigment due to the destruction of melanocytes, the cells responsible for skin color.</td>
+                      </tr>
+                      <tr>
+                          <th>Symptoms</th>
+                          <td>
+                              <ul>
+                                  <li>White or light-colored patches on the skin</li>
+                                  <li>Patches typically appear on hands, face, and around body openings</li>
+                                  <li>Premature whitening or graying of hair</li>
+                                  <li>Loss of color in the mucous membranes</li>
+                              </ul>
+                          </td>
+                      </tr>
+                      <tr>
+                          <th>Causes</th>
+                          <td>
+                              <ul>
+                                  <li>Autoimmune disorders</li>
+                                  <li>Genetic predisposition</li>
+                                  <li>Oxidative stress within the body</li>
+                                  <li>Environmental triggers</li>
+                                  <li>Skin trauma or sunburn</li>
+                              </ul>
+                          </td>
+                      </tr>
+                      <tr>
+                          <th>Prevention</th>
+                          <td>
+                              <ul>
+                                  <li>Protect skin from excessive sun exposure</li>
+                                  <li>Manage stress effectively</li>
+                                  <li>Follow a balanced diet to support immune health</li>
+                                  <li>Avoid skin injuries and harsh chemicals</li>
+                              </ul>
+                          </td>
+                      </tr>
+                      <tr>
+                          <th>Treatment</th>
+                          <td>
+                              <ul>
+                                  <li>Topical corticosteroids</li>
+                                  <li>Phototherapy (UVB light treatment)</li>
+                                  <li>Immunomodulatory creams</li>
+                                  <li>Skin camouflage and cosmetic cover-ups</li>
+                                  <li>Skin grafting in severe cases</li>
+                              </ul>
+                          </td>
+                      </tr>
+                      <tr>
+                          <th>Dietary Recommendations</th>
+                          <td>
+                              <ul>
+                                  <li>Fruits: Apples, bananas, berries</li>
+                                  <li>Vegetables: Carrots, beets, leafy greens</li>
+                                  <li>Foods rich in antioxidants: Nuts, seeds</li>
+                                  <li>Omega-3 rich foods: Flaxseeds, walnuts, fish</li>
+                              </ul>
+                          </td>
+                      </tr>
+                      <tr>
+                          <th>Yoga and Physical Activity</th>
+                          <td>Incorporate stress-relieving yoga poses and breathing exercises. Regular walking, light aerobic exercises, and meditation can support emotional well-being.</td>
+                      </tr>
+                  </table>
+              </div>
+          </div>
+  
+      
+          
+
+
+        {% endif %}
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
